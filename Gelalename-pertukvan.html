@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گەڵاڵەپێشنیار - کۆمپانیای پەرتوکڤان</title>
+    <!-- Font Awesome بۆ ئایکۆنەکان -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600&display=swap');
+
+        :root {
+            --primary-color: #C2A365; 
+            --dark-color: #2d3748;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+        }
+
+        body {
+            font-family: 'Noto Kufi Arabic', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header img.logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        header h1 {
+            margin: 0 0 15px 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        form {
+            padding: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .form-section h2 {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(194, 163, 101, 0.1);
+        }
+
+        .options-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed var(--border);
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .file-upload-card {
+            background: #fcfcfc;
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .file-upload-card:hover {
+            border-color: var(--primary-color);
+            background: #fffcf5;
+        }
+
+        .file-upload-card i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .info-box {
+            background-color: #fff9eb;
+            border-right: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .info-box p {
+            margin: 0 0 12px 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #718096;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 12px;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #1a202c;
+        }
+
+        footer {
+            background: #f8fafc;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-info {
+            font-size: 1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            direction: ltr;
+        }
+
+        .hidden { display: none; }
+
+        .file-name {
+            display: block;
+            margin-top: 5px;
+            color: #2b6cb0;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="https://www.pertukvan.com/images/logo.png" alt="لۆگۆ" class="logo">
+        <h1>فۆڕمی پێشکەشکردنی گەڵاڵەپێشنیار</h1>
+        <p>
+            بەڕێزان نووسەران و وەرگێڕان، ئێمە لە پەرتوکڤان هەمیشە بەدوای بەرهەمی ناوازەدا دەگەڕێین. تکایە ئەم فۆڕمە بە وردی پڕبکەنەوە بۆ ئەوەی تیمی هەڵسەنگاندن بتوانن بە باشترین شێوە پڕۆژەکەتان ببینن.
+        </p>
+    </header>
+
+    <form action="https://formspree.io/f/xkgkgpkg" method="POST" enctype="multipart/form-data">
+        
+        <!-- بەشی یەکەم -->
+        <section class="form-section">
+            <h2><i class="fas fa-user"></i> یەکەم: زانیاریی کەسی</h2>
+            <div class="form-group">
+                <label>ناوی سیانی:</label>
+                <input type="text" name="full_name" placeholder="ناوی تەواوت بنووسە" required>
+            </div>
+            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group">
+                    <label>ئیمەیڵ:</label>
+                    <input type="email" name="email" placeholder="example@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label>ژمارەی تەلەفۆن:</label>
+                    <input type="tel" name="phone" placeholder="07XXXXXXXXX" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>کورتەیەک لە ژیاننامە و ئەزموون:</label>
+                <textarea name="bio" placeholder="ئاماژە بە پسپۆڕی و بەرهەمەکانی پێشووت بکە..."></textarea>
+            </div>
+        </section>
+
+        <!-- بەشی دووەم -->
+        <section class="form-section">
+            <h2><i class="fas fa-layer-group"></i> دووەم: جۆری پڕۆژە</h2>
+            <div class="options-group">
+                <label class="option-item">
+                    <input type="radio" name="project_type" value="author" onclick="toggleSection('author')" required> 
+                    <span>نووسین</span>
+                </label>
+                <label class="option-item">
+                    <input type="radio" name="project_type" value="translator" onclick="toggleSection('translator')"> 
+                    <span>وەرگێڕان</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- بەشی تایبەت بە نووسەر -->
+        <section id="authorSection" class="form-section hidden">
+            <h2><i class="fas fa-pen-nib"></i> زانیاریی بەرهەم (نووسین)</h2>
+            <div class="form-group">
+                <label>ناونیشانی پێشنیارکراو:</label>
+                <input type="text" name="author_title">
+            </div>
+            <div class="form-group">
+                <label>چەشن یان جۆری کتێب:</label>
+                <input type="text" name="author_genre" placeholder="ڕۆمان، مێژوو، فیکری...">
+            </div>
+            <div class="form-group">
+                <label>پوختەی ناوەڕۆک:</label>
+                <textarea name="author_synopsis" placeholder="باسێکی کورتی بیرۆکەی سەرەکیی کتێبەکە..."></textarea>
+            </div>
+        </section>
+
+        <!-- بەشی تایبەت بە وەرگێڕ -->
+        <section id="translatorSection" class="form-section hidden">
+            <h2><i class="fas fa-language"></i> زانیاریی وەرگێڕان</h2>
+            <div class="form-group">
+                <label>ناونیشانی ڕەسەن و ناوی نووسەر:</label>
+                <input type="text" name="original_details">
+            </div>
+            <div class="form-group">
+                <label>دۆخی مافی بڵاوکردنەوە (Copyright):</label>
+                <div class="options-group">
+                    <label class="option-item"><input type="radio" name="copyright" value="yes"> مافەکەم وەرگرتووە</label>
+                    <label class="option-item"><input type="radio" name="copyright" value="no"> مافەکەی بەسەرچووە</label>
+                    <label class="option-item"><input type="radio" name="copyright" value="help"> نەخێر، پێویستە ئێوە یارمەتیم بدەن.</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- بەشی چوارەم: بارکردن -->
+        <section class="form-section">
+            <h2><i class="fas fa-cloud-upload-alt"></i> سێیەم: بارکردنی فایلەکان</h2>
+            <div class="file-upload-card">
+                <i class="fas fa-file-pdf"></i>
+                <span>١. پێڕستی ناوەڕۆکی کتێب (PDF/Word)</span>
+                <input type="file" name="toc_file" onchange="showFileName(this)">
+                <small class="file-name"></small>
+            </div>
+            <div class="file-upload-card">
+                <i class="fas fa-file-alt"></i>
+                <span>٢. نموونەیەک لە نووسین یان وەرگێڕانەکە</span>
+                <input type="file" name="sample_file" onchange="showFileName(this)">
+                <small class="file-name"></small>
+            </div>
+        </section>
+
+        <!-- بەشی تێبینی و زانیاری کۆتایی -->
+        <div class="info-box">
+            <p><strong>تێبینی:</strong> پەرتوکڤان هەموو بەرهەمەکان بە سێ شێوازی (چاپی، دیجیتاڵی، و دەنگی) بڵاودەکاتەوە.</p>
+            <p>سوپاس بۆ پێشکەشکردنی بەرهەمەکەت. تیمی سەرنووسەریی پەرتوکڤان لە ماوەی ٤ بۆ ٦ هەفتەدا پێداچوونەوەی بۆ دەکات و لە ڕێگەی ئیمەیڵەوە وەڵامت دەداتەوە.</p>
+            <p class="disclaimer"><strong>تێبینی:</strong> پڕکردنەوەی ئەم فۆڕمە تەنها بۆ هەڵسەنگاندنی سەرەتاییە و وەک گرێبەستێکی یاسایی هەژمار ناکرێت.</p>
+        </div>
+
+        <button type="submit" class="submit-btn">ناردنی گەڵاڵەپێشنیار</button>
+    </form>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/Pertukvancom" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/pertukvancafe/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.google.com/maps/place/pertukvan+%2F+%D9%BE%DB%95%D8%B1%D8%AA%D9%88%DA%A9%DA%A4%D8%A7%D9%86%E2%80%AD/@35.5634132,45.4031803,17z/data=!3m1!4b1!4m6!3m5!1s0x40002f0032b3c01b:0xf6a63faa908db112!8m2!3d35.5634132!4d45.4031803!16s%2Fg%2F11xmxh4y8z?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+        <a href="tel:009647708781001" class="contact-info">
+            <i class="fas fa-phone"></i> 00964 770 878 1001
+        </a>
+
+        <div style="direction: ltr; font-size: 1rem; color: #718096; margin-top: 15px;">
+            <a href="https://www.pertukvan.com" target="_blank" style="color: #718096; text-decoration: none; transition: color 0.3s;">www.pertukvan.com</a>
+            <span style="margin: 0 8px;">-</span>
+            <a href="https://www.pertukvan.cafe" target="_blank" style="color: #718096; text-decoration: none; transition: color 0.3s;">www.pertukvan.cafe</a>
+        </div>
+
+
+<script>
+    function toggleSection(type) {
+        const authorSec = document.getElementById('authorSection');
+        const transSec = document.getElementById('translatorSection');
+        
+        if(type === 'author') {
+            authorSec.classList.remove('hidden');
+            transSec.classList.add('hidden');
+        } else {
+            authorSec.classList.add('hidden');
+            transSec.classList.remove('hidden');
+        }
+    }
+
+    function showFileName(input) {
+        if(input.files.length > 0) {
+            const fileName = input.files[0].name;
+            input.parentElement.querySelector('.file-name').innerText = "فایلی هەڵبژێردراو: " + fileName;
+        }
+    }
+</script>
+
+</body>
+</html>
