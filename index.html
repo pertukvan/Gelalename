@@ -100,7 +100,6 @@
         input[type="text"],
         input[type="email"],
         input[type="tel"],
-        input[type="number"],
         textarea {
             width: 100%;
             padding: 12px 15px;
@@ -140,7 +139,7 @@
             background: #fcfcfc;
             border: 2px dashed var(--border);
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             margin-bottom: 15px;
             transition: all 0.3s;
@@ -154,7 +153,7 @@
         }
 
         .file-upload-card i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 8px;
             display: block;
@@ -181,20 +180,6 @@
         .info-box p {
             margin: 0 0 12px 0;
             font-size: 0.95rem;
-            color: var(--text-main);
-        }
-
-        .info-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        .disclaimer {
-            font-size: 0.85rem;
-            color: #718096;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 12px;
-            margin-top: 12px;
-            font-style: italic;
         }
 
         .submit-btn {
@@ -217,7 +202,7 @@
 
         footer {
             background: #f8fafc;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
             border-top: 1px solid var(--border);
         }
@@ -225,13 +210,13 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .social-links a {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             background: white;
             border-radius: 50%;
             display: flex;
@@ -240,7 +225,7 @@
             color: var(--primary-color);
             text-decoration: none;
             font-size: 1.2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: all 0.3s;
         }
 
@@ -248,16 +233,6 @@
             background: var(--primary-color);
             color: white;
             transform: translateY(-3px);
-        }
-
-        .contact-info {
-            font-size: 1rem;
-            color: var(--text-main);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            direction: ltr;
         }
 
         .hidden { display: none; }
@@ -278,52 +253,51 @@
     <header>
         <img src="https://www.pertukvan.com/images/logo.png" alt="لۆگۆ" class="logo">
         <h1>فۆڕمی پێشکەشکردنی گەڵاڵەپێشنیار</h1>
-        <p>
-            بەڕێزان نووسەران و وەرگێڕان، ئێمە لە پەرتوکڤان هەمیشە بەدوای بەرهەمی ناوازەدا دەگەڕێین. تکایە ئەم فۆڕمە بە وردی پڕبکەنەوە بۆ ئەوەی تیمی هەڵسەنگاندن بتوانن بە باشترین شێوە پڕۆژەکەتان ببینن.
-        </p>
+        <p>بەڕێزان نووسەران و وەرگێڕان، تکایە ئەم فۆڕمە بە وردی پڕبکەنەوە بۆ ئەوەی تیمی هەڵسەنگاندن بتوانن پڕۆژەکەتان ببینن.</p>
     </header>
 
-<form action="https://pertukvan.getform.com/omokp" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_next" value="https://www.pertukvan.com">
-        <!-- بەشی یەکەم -->
+    <!-- فۆڕمەکە بە لینکی تایبەتی خۆت -->
+    <form action="https://pertukvan.getform.com/97179" method="POST" enctype="multipart/form-data">
+        
+        <!-- گەڕانەوە بۆ ماڵپەڕی سەرەکی دوای ناردن -->
+        <input type="hidden" name="_next" value="https://www.pertukvan.com">
+
         <section class="form-section">
             <h2><i class="fas fa-user"></i> یەکەم: زانیاریی کەسی</h2>
             <div class="form-group">
                 <label>ناوی سیانی:</label>
                 <input type="text" name="full_name" placeholder="ناوی تەواوت بنووسە" required>
             </div>
-            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                 <div class="form-group">
                     <label>ئیمەیڵ:</label>
                     <input type="email" name="email" placeholder="example@mail.com" required>
                 </div>
                 <div class="form-group">
                     <label>ژمارەی تەلەفۆن:</label>
-                    <input type="tel" name="phone" placeholder="07XXXXXXXXX" required>
+                    <input type="tel" name="phone" placeholder="07XXXXXXXXX" required style="direction: ltr;">
                 </div>
             </div>
             <div class="form-group">
-                <label>کورتەیەک لە ژیاننامە و ئەزموون:</label>
+                <label>کورتەی ژیاننامە:</label>
                 <textarea name="bio" placeholder="ئاماژە بە پسپۆڕی و بەرهەمەکانی پێشووت بکە..."></textarea>
             </div>
         </section>
 
-        <!-- بەشی دووەم -->
         <section class="form-section">
             <h2><i class="fas fa-layer-group"></i> دووەم: جۆری پڕۆژە</h2>
             <div class="options-group">
                 <label class="option-item">
-                    <input type="radio" name="project_type" value="author" onclick="toggleSection('author')" required> 
+                    <input type="radio" name="project_type" value="author" onclick="toggleSec('author')" required> 
                     <span>نووسین</span>
                 </label>
                 <label class="option-item">
-                    <input type="radio" name="project_type" value="translator" onclick="toggleSection('translator')"> 
+                    <input type="radio" name="project_type" value="translator" onclick="toggleSec('translator')"> 
                     <span>وەرگێڕان</span>
                 </label>
             </div>
         </section>
 
-        <!-- بەشی تایبەت بە نووسەر -->
         <section id="authorSection" class="form-section hidden">
             <h2><i class="fas fa-pen-nib"></i> زانیاریی بەرهەم (نووسین)</h2>
             <div class="form-group">
@@ -336,11 +310,10 @@
             </div>
             <div class="form-group">
                 <label>پوختەی ناوەڕۆک:</label>
-                <textarea name="author_synopsis" placeholder="باسێکی کورتی بیرۆکەی سەرەکیی کتێبەکە..."></textarea>
+                <textarea name="author_synopsis" placeholder="باسێکی کورتی بیرۆکەی کتێبەکە بکە..."></textarea>
             </div>
         </section>
 
-        <!-- بەشی تایبەت بە وەرگێڕ -->
         <section id="translatorSection" class="form-section hidden">
             <h2><i class="fas fa-language"></i> زانیاریی وەرگێڕان</h2>
             <div class="form-group">
@@ -352,33 +325,25 @@
                 <div class="options-group">
                     <label class="option-item"><input type="radio" name="copyright" value="yes"> مافەکەم وەرگرتووە</label>
                     <label class="option-item"><input type="radio" name="copyright" value="no"> مافەکەی بەسەرچووە</label>
-                    <label class="option-item"><input type="radio" name="copyright" value="help"> نەخێر، پێویستە ئێوە یارمەتیم بدەن.</label>
+                    <label class="option-item"><input type="radio" name="copyright" value="help"> پێویستم بە یارمەتییە</label>
                 </div>
             </div>
         </section>
 
-        <!-- بەشی چوارەم: بارکردن -->
         <section class="form-section">
             <h2><i class="fas fa-cloud-upload-alt"></i> سێیەم: بارکردنی فایلەکان</h2>
             <div class="file-upload-card">
                 <i class="fas fa-file-pdf"></i>
-                <span>١. پێڕستی ناوەڕۆکی کتێب (PDF/Word)</span>
-                <input type="file" name="toc_file" onchange="showFileName(this)">
-                <small class="file-name"></small>
-            </div>
-            <div class="file-upload-card">
-                <i class="fas fa-file-alt"></i>
-                <span>٢. نموونەیەک لە نووسین یان وەرگێڕانەکە</span>
-                <input type="file" name="sample_file" onchange="showFileName(this)">
+                <span>پێڕستی ناوەڕۆک و نموونەیەک لە بەرهەمەکە بار بکە (PDF/Word)</span>
+                <input type="file" name="attachment" onchange="showFileName(this)" required>
                 <small class="file-name"></small>
             </div>
         </section>
 
-        <!-- بەشی تێبینی و زانیاری کۆتایی -->
         <div class="info-box">
             <p><strong>تێبینی:</strong> پەرتوکڤان هەموو بەرهەمەکان بە سێ شێوازی (چاپی، دیجیتاڵی، و دەنگی) بڵاودەکاتەوە.</p>
-            <p>سوپاس بۆ پێشکەشکردنی بەرهەمەکەت. تیمی سەرنووسەریی پەرتوکڤان لە ماوەی ٤ بۆ ٦ هەفتەدا پێداچوونەوەی بۆ دەکات و لە ڕێگەی ئیمەیڵەوە وەڵامت دەداتەوە.</p>
-            <p class="disclaimer"><strong>تێبینی:</strong> پڕکردنەوەی ئەم فۆڕمە تەنها بۆ هەڵسەنگاندنی سەرەتاییە و وەک گرێبەستێکی یاسایی هەژمار ناکرێت.</p>
+            <p>سوپاس بۆ پێشکەشکردنی بەرهەمەکەت. تیمی سەرنووسەری لە ماوەی ٤ بۆ ٦ هەفتەدا وەڵامت دەداتەوە.</p>
+            <p style="font-size: 0.85rem; color: #718096; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 10px;">پڕکردنەوەی ئەم فۆڕمە تەنها بۆ هەڵسەنگاندنی سەرەتاییە و وەک گرێبەستێکی یاسایی هەژمار ناکرێت.</p>
         </div>
 
         <button type="submit" class="submit-btn">ناردنی گەڵاڵەپێشنیار</button>
@@ -386,39 +351,32 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://www.facebook.com/Pertukvancom" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.google.com/maps/place/pertukvan..." target="_blank"><i class="fas fa-map-marker-alt"></i></a>
             <a href="https://www.instagram.com/pertukvancafe/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.google.com/maps/place/pertukvan+%2F+%D9%BE%DB%95%D8%B1%D8%AA%D9%88%DA%A9%DA%A4%D8%A7%D9%86%E2%80%AD/@35.5634132,45.4031803,17z/data=!3m1!4b1!4m6!3m5!1s0x40002f0032b3c01b:0xf6a63faa908db112!8m2!3d35.5634132!4d45.4031803!16s%2Fg%2F11xmxh4y8z?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            <a href="https://www.facebook.com/Pertukvancom" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
-        <a href="tel:009647708781001" class="contact-info">
-            <i class="fas fa-phone"></i> 00964 770 878 1001
-        </a>
-
-        <div style="direction: ltr; font-size: 1rem; color: #718096; margin-top: 15px;">
-            <a href="https://www.pertukvan.com" target="_blank" style="color: #718096; text-decoration: none; transition: color 0.3s;">www.pertukvan.com</a>
+        <div style="margin-bottom: 20px;">
+            <a href="tel:009647708781001" style="font-size: 1.3rem; color: #1a202c; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; direction: ltr; font-weight: 600;">
+                <i class="fas fa-phone-alt"></i> 00964 770 878 1001
+            </a>
+        </div>
+        <div style="direction: ltr; font-size: 0.95rem; color: #718096;">
+            <a href="https://www.pertukvan.com" target="_blank" style="color: #718096; text-decoration: none;">www.pertukvan.com</a>
             <span style="margin: 0 8px;">-</span>
-            <a href="https://www.pertukvan.cafe" target="_blank" style="color: #718096; text-decoration: none; transition: color 0.3s;">www.pertukvan.cafe</a>
+            <a href="https://www.pertukvan.cafe" target="_blank" style="color: #718096; text-decoration: none;">www.pertukvan.cafe</a>
         </div>
-
+        <p style="margin-top: 30px; font-size: 0.8rem; color: #999;">هەموو مافەکان بۆ کۆمپانیای پەرتوکڤان پارێزراوە</p>
+    </footer>
+</div>
 
 <script>
-    function toggleSection(type) {
-        const authorSec = document.getElementById('authorSection');
-        const transSec = document.getElementById('translatorSection');
-        
-        if(type === 'author') {
-            authorSec.classList.remove('hidden');
-            transSec.classList.add('hidden');
-        } else {
-            authorSec.classList.add('hidden');
-            transSec.classList.remove('hidden');
-        }
+    function toggleSec(type) {
+        document.getElementById('authorSection').classList.toggle('hidden', type !== 'author');
+        document.getElementById('translatorSection').classList.toggle('hidden', type !== 'translator');
     }
-
     function showFileName(input) {
         if(input.files.length > 0) {
-            const fileName = input.files[0].name;
-            input.parentElement.querySelector('.file-name').innerText = "فایلی هەڵبژێردراو: " + fileName;
+            input.parentElement.querySelector('.file-name').innerText = "فایلی هەڵبژێردراو: " + input.files[0].name;
         }
     }
 </script>
